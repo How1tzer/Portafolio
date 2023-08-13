@@ -4,13 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad 2</title>
-    
 </head>
-<body >
+<body class="body">
+    <!--De normarl estoy acostumbrado a separar por archivos (css,js,html)
+    Pero como es el primer trabajo no me quise emocionar mucho-->
+    
+    <canvas width="700" height="700" id="mycanvas"></canvas>
+    
     <style>
-        
+        .body{
+            background-color: rgb(24, 21, 38);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #mycanvas{
+            background-color: rgb(217, 213, 213);
+            border-radius: 30px;
+            
+        }
     </style>
-    <canvas width="700" height="700"></canvas>
+
+   
+   
+   <script>
+
+        /*Agregando Cosas del curso*/
+
+    var canvas = document.getElementById('mycanvas'); 
+    if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "rgb(200,0,0)";
+        ctx.fillRect (20, 20, 70, 70);
+
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (40, 50, 70, 70);
+
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (40, 50, 70, 70);
+    
+    }
+    else {   }
+
+    
+        
+    </script>
     
 </body>
 </html>
