@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 3</title>
+</head>
+<body class="body">
+    <!--Uso mi codigo pasado para que mantenga forma de momento, no pido que me perdone solo que me entienda-->
+    
+    <canvas width="700" height="700" id="mycanvas"></canvas>
+    
+    <style>
+        .body{
+            background-color: rgb(24, 21, 38);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #mycanvas{
+            background-color: rgb(217, 213, 213);
+            border-radius: 30px;
+            
+        }
+    </style>
+
+   
+   <script>
+
+        /*Agregando Cosas del curso*/
+
+    var canvas = document.getElementById('mycanvas'); 
+    if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        
+        //linea
+        ctx.moveTo(600, 390);
+        ctx.lineTo(200, 240);
+        ctx.stroke();
+
+        //Triangulo (dolor de cabeza)
+        ctx.beginPath();
+
+        ctx.moveTo(230, 280);
+        ctx.lineTo(300, 410);
+        ctx.lineTo(500, 380);
+        ctx.closePath();
+
+        ctx.fillStyle = "rgba(200, 100, 1000, 0.5)";
+        ctx.fill();
+    
+    }
+    else {   }
+
+    
+        
+    </script>
+    
+</body>
+</html>
