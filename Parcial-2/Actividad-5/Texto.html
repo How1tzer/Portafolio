@@ -34,28 +34,43 @@
     var canvas = document.getElementById('mycanvas'); 
     if (canvas.getContext) {
         var ctx = canvas.getContext("2d");
-        
-        //Borde de Fin
-        ctx.beginPath();
-        ctx.arc(180,200,100,0,2*Math.PI)
-        ctx.stroke();
-
-        //Borde de Jake
-        ctx.beginPath();
-        ctx.arc(500,200,100,0,2*Math.PI)
-        ctx.stroke();
-
         //Relleno de Jake
         ctx.beginPath();
-        ctx.arc(500, 200, 100, 0, 2 * Math.PI);
+        ctx.arc(500, 300, 100, 0, 2 * Math.PI);
         ctx.fillStyle = "orange";
         ctx.fill();
+        ctx.closePath();
+        
 
         //Relleno de Fin
         ctx.beginPath();
-        ctx.arc(180, 200, 100, 0, 2 * Math.PI);
+        ctx.arc(180, 300, 100, 0, 2 * Math.PI);
         ctx.fillStyle = "Cyan";
         ctx.fill();
+        ctx.closePath();
+        
+        //Borde de Fin
+        ctx.beginPath();
+        ctx.arc(180,300,100,0,2*Math.PI)
+        ctx.closePath();
+
+        //Borde de Jake
+        ctx.beginPath();
+        ctx.arc(500,300,100,0,2*Math.PI)
+        ctx.closePath();
+
+        
+    
+
+        //Titulo Fin
+        ctx.font = "20px Georgia";
+        ctx.fillText("Hello World!", 120, 100);
+        context.fillStyle = 'white';
+        ctx.strokeText("Hello World!", 120, 100);
+        
+        
+
+       
 
         
 
