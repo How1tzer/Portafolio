@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad 6</title>
+    <title>Actividad 8</title>
 </head>
 <body class="body">
     <!--Uso mi codigo pasado para que mantenga forma de momento, no pido que me perdone solo que me entienda-->
@@ -28,11 +28,28 @@
    
    <script>
     
-        /*Aqui aprovecho lo que se me pide para agregarle diseño*/
+        /*Las imagenes fueron creadas por mi desde cero con referencias*/
 
     var canvas = document.getElementById('mycanvas'); 
     if (canvas.getContext) {
         var ctx = canvas.getContext("2d");
+
+        //Imagen de Fin
+
+        //Imagen de Jake
+        
+        //Radial del fondo
+        ctx.beginPath();
+        const rad = ctx.createRadialGradient(350, 370, 20, 350, 390, 500);
+        rad.addColorStop(0, "#73E027");
+        rad.addColorStop(1, "white");
+        ctx.closePath();
+
+        //Fondo
+        ctx.beginPath();
+        ctx.fillStyle = rad;
+        ctx.fillRect(0, 0, 700, 700);
+        ctx.closePath();
 
         //Gradiante de Jake
         ctx.beginPath();

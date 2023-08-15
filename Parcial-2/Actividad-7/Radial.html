@@ -39,27 +39,27 @@
         const rad = ctx.createRadialGradient(350, 370, 20, 350, 390, 500);
         rad.addColorStop(0, "#73E027");
         rad.addColorStop(1, "white");
-        ctx.beginPath();
+        ctx.closePath();
 
         //Fondo
         ctx.beginPath();
         ctx.fillStyle = rad;
         ctx.fillRect(0, 0, 700, 700);
-        ctx.beginPath();
+        ctx.closePath();
 
         //Gradiante de Jake
         ctx.beginPath();
         const grd1 = ctx.createLinearGradient(0, 0, 0, 380);
         grd1.addColorStop(0, "orange");
         grd1.addColorStop(1, "white");
-        ctx.beginPath();
+        ctx.closePath();
         
         //Gradiante de Fin
         ctx.beginPath();
         const grd2 = ctx.createLinearGradient(0, 0, 0, 380);
         grd2.addColorStop(0, "cyan");
         grd2.addColorStop(1, "white");
-        ctx.beginPath();
+        ctx.closePath();
 
         //Relleno de Jake
         ctx.beginPath();
