@@ -4,121 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad 8</title>
-</head>
-<body class="body">
-    <!--Uso mi codigo pasado para que mantenga forma de momento, no pido que me perdone solo que me entienda-->
-    
-    <canvas width="700" height="700" id="mycanvas"></canvas>
-    <!--Imagenes pre cargadas-->
     <style>
-        .body{
+        .body {
             background-color: rgb(24, 21, 38);
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        #mycanvas{
+        .single-image {
+            display: none;
+        }
+
+        #mycanvas {
             background-color: rgb(217, 213, 213);
             border-radius: 30px;
-            
         }
     </style>
+</head>
+<body class="body">
+    <canvas width="700" height="700" id="mycanvas"></canvas>
 
-   
-   <script>
-    
-        /*Las imagenes fueron creadas por mi desde cero con referencias*/
-        
-    var canvas = document.getElementById('mycanvas'); 
-    if (canvas.getContext) {
-        var ctx = canvas.getContext("2d");
-        ctx.beginPath();
-        // Imagenes
-      
-           
-    
-        //Radial del fondo
-        ctx.beginPath();
-        const rad = ctx.createRadialGradient(350, 370, 20, 350, 390, 500);
-        rad.addColorStop(0, "#73E027");
-        rad.addColorStop(1, "white");
-        ctx.closePath();
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
 
-        //Fondo
-        ctx.beginPath();
-        ctx.fillStyle = rad;
-        ctx.fillRect(0, 0, 700, 700);
-        ctx.closePath();
+            // Radial del fondo
+            const rad = ctx.createRadialGradient(350, 370, 20, 350, 390, 500);
+            rad.addColorStop(0, "#73E027");
+            rad.addColorStop(1, "white");
 
-        //Gradiante de Jake
-        ctx.beginPath();
-        const grd1 = ctx.createLinearGradient(0, 0, 0, 380);
-        grd1.addColorStop(0, "orange");
-        grd1.addColorStop(1, "white");
-        ctx.closePath();
-        
-        //Gradiante de Fin
-        ctx.beginPath();
-        const grd2 = ctx.createLinearGradient(0, 0, 0, 380);
-        grd2.addColorStop(0, "cyan");
-        grd2.addColorStop(1, "white");
-        ctx.closePath();
+            // Fondo
+            ctx.fillStyle = rad;
+            ctx.fillRect(0, 0, 700, 700);
 
-        //Relleno de Jake
-        ctx.beginPath();
-        ctx.arc(450, 300, 100, 0, 2 * Math.PI);
-        ctx.fillStyle = grd1;
-        ctx.fill();
-        ctx.closePath();
-        
-        //Relleno de Fin
-        ctx.beginPath();
-        ctx.arc(220, 300, 100, 0, 2 * Math.PI);
-        ctx.fillStyle = grd2;
-        ctx.fill();
-        ctx.closePath();
-        
-        //Borde de Fin
-        ctx.beginPath();
-        ctx.arc(220,300,100,0,2*Math.PI)
-        ctx.lineWidth = 5;
-        ctx.stroke();
-        ctx.closePath();
+            // Gradiante de Jake
+            const grd1 = ctx.createLinearGradient(0, 0, 0, 380);
+            grd1.addColorStop(0, "orange");
+            grd1.addColorStop(1, "white");
 
-        //Borde de Jake
-        ctx.beginPath();
-        ctx.arc(450,300,100,0,2*Math.PI)
-        ctx.lineWidth = 5;
-        ctx.stroke();
-        ctx.closePath();
+            // Gradiante de Finn
+            const grd2 = ctx.createLinearGradient(0, 0, 0, 380);
+            grd2.addColorStop(0, "cyan");
+            grd2.addColorStop(1, "white");
 
-        //Titulo Fin
-        ctx.beginPath();
-        ctx.lineWidth = 1;
-        ctx.font = "30px Georgia";
-        ctx.strokeText("Fin", 70, 220);
-        ctx.strokeText("The", 40, 280);
-        ctx.strokeText("Human", 10, 340);
-        ctx.closePath();
+            // Relleno de Jake
+            ctx.beginPath();
+            ctx.arc(450, 300, 100, 0, 2 * Math.PI);
+            ctx.fillStyle = grd1;
+            ctx.fill();
 
-        //Titulo Jake
-        ctx.beginPath();
-        ctx.fillStyle = "red";
-        ctx.font = "30px Impact";
-        ctx.fillText("Jake", 560, 220);
-        ctx.fillText("The", 600, 280);
-        ctx.fillText("Dog", 570, 340);
-        ctx.closePath();
+            // Relleno de Finn
+            ctx.beginPath();
+            ctx.arc(220, 300, 100, 0, 2 * Math.PI);
+            ctx.fillStyle = grd2;
+            ctx.fill();
 
-        
-        
-    }
-    else {   }
+            // Borde de Finn
+            ctx.lineWidth = 5;
+            ctx.stroke();
 
-    
-        
+            // Borde de Jake
+            ctx.beginPath();
+            ctx.arc(450, 300, 100, 0, 2 * Math.PI);
+            ctx.stroke();
+
+            // Titulo Fin
+            ctx.lineWidth = 1;
+            ctx.font = "30px Georgia";
+            ctx.strokeText("Fin", 70, 220);
+            ctx.strokeText("The", 40, 280);
+            ctx.strokeText("Human", 10, 340);
+
+            // Titulo Jake
+            ctx.fillStyle = "red";
+            ctx.font = "30px Impact";
+            ctx.fillText("Jake", 560, 220);
+            ctx.fillText("The", 600, 280);
+            ctx.fillText("Dog", 570, 340);
+
+            // Dibujar las imágenes 
+            /*Para hacer esta parte tuve que buscar un video ya que de la manera
+            normal se me borraba el canvas todo lo demas salio completamente
+            de la documentacion que nos fue brindando*/
+
+            var image = new Image();
+            image.src = "Finn.png";
+            image.onload = function() {
+                ctx.drawImage(image, 130, 220,170,170);
+            };
+
+            var image2 = new Image();
+            image2.src = "Jake.png";
+            image2.onload = function() {
+                ctx.drawImage(image2, 350, 220,200,200);
+            };
+        }
     </script>
-    
 </body>
 </html>
