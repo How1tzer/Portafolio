@@ -33,7 +33,19 @@
     var canvas = document.getElementById('mycanvas'); 
     if (canvas.getContext) {
         var ctx = canvas.getContext("2d");
+        
         //Radial del fondo
+        ctx.beginPath();
+        const rad = ctx.createRadialGradient(350, 370, 20, 350, 390, 500);
+        rad.addColorStop(0, "#73E027");
+        rad.addColorStop(1, "white");
+        ctx.beginPath();
+
+        //Fondo
+        ctx.beginPath();
+        ctx.fillStyle = rad;
+        ctx.fillRect(0, 0, 700, 700);
+        ctx.beginPath();
 
         //Gradiante de Jake
         ctx.beginPath();
