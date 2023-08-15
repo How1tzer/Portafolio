@@ -28,15 +28,32 @@
    
    <script>
     
-        /*Agregando Cosas del curso*/
+        /*Cuando estabamos en clase se me ocurrio hacer como los circulos que aparecen cuando
+        empieza hora de aventura, asi que conforme avance voy a desarrollar algo asi*/
 
     var canvas = document.getElementById('mycanvas'); 
     if (canvas.getContext) {
         var ctx = canvas.getContext("2d");
         
+        //Borde de fin
         ctx.beginPath();
-        ctx.arc(100,75,50,0,2*Math.PI)
+        ctx.arc(180,200,100,0,2*Math.PI)
         ctx.stroke();
+
+        //Borde de jake
+        ctx.beginPath();
+        ctx.arc(500,200,100,0,2*Math.PI)
+        ctx.stroke();
+
+        //Relleno de fin
+        ctx.beginPath();
+        ctx.arc(500, 200, 100, 0, 2 * Math.PI);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+
+
+        
+
     
     }
     else {   }
