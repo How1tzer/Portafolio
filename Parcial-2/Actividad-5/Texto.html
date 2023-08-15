@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5</title>
+</head>
+<body class="body">
+    <!--Uso mi codigo pasado para que mantenga forma de momento, no pido que me perdone solo que me entienda-->
+    
+    <canvas width="700" height="700" id="mycanvas"></canvas>
+    
+    <style>
+        .body{
+            background-color: rgb(24, 21, 38);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #mycanvas{
+            background-color: rgb(217, 213, 213);
+            border-radius: 30px;
+            
+        }
+    </style>
+
+   
+   <script>
+    
+        /*Cuando estabamos en clase se me ocurrio hacer como los circulos que aparecen cuando
+        empieza hora de aventura, asi que conforme avance voy a desarrollar algo asi*/
+
+    var canvas = document.getElementById('mycanvas'); 
+    if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        
+        //Borde de Fin
+        ctx.beginPath();
+        ctx.arc(180,200,100,0,2*Math.PI)
+        ctx.stroke();
+
+        //Borde de Jake
+        ctx.beginPath();
+        ctx.arc(500,200,100,0,2*Math.PI)
+        ctx.stroke();
+
+        //Relleno de Jake
+        ctx.beginPath();
+        ctx.arc(500, 200, 100, 0, 2 * Math.PI);
+        ctx.fillStyle = "orange";
+        ctx.fill();
+
+        //Relleno de Fin
+        ctx.beginPath();
+        ctx.arc(180, 200, 100, 0, 2 * Math.PI);
+        ctx.fillStyle = "Cyan";
+        ctx.fill();
+
+        
+
+    
+    }
+    else {   }
+
+    
+        
+    </script>
+    
+</body>
+</html>
