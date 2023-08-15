@@ -9,7 +9,7 @@
     <!--Uso mi codigo pasado para que mantenga forma de momento, no pido que me perdone solo que me entienda-->
     
     <canvas width="700" height="700" id="mycanvas"></canvas>
-    
+    <!--Imagenes pre cargadas-->
     <style>
         .body{
             background-color: rgb(24, 21, 38);
@@ -29,15 +29,15 @@
    <script>
     
         /*Las imagenes fueron creadas por mi desde cero con referencias*/
-
+        
     var canvas = document.getElementById('mycanvas'); 
     if (canvas.getContext) {
         var ctx = canvas.getContext("2d");
-
-        //Imagen de Fin
-
-        //Imagen de Jake
-        
+        ctx.beginPath();
+        // Imagenes
+      
+           
+    
         //Radial del fondo
         ctx.beginPath();
         const rad = ctx.createRadialGradient(350, 370, 20, 350, 390, 500);
@@ -110,6 +110,8 @@
         ctx.fillText("The", 600, 280);
         ctx.fillText("Dog", 570, 340);
         ctx.closePath();
+
+        
         
     }
     else {   }
