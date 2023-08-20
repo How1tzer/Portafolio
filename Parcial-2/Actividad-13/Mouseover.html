@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 8</title>
+    <style>
+        .body {
+            background-color: rgb(24, 21, 38);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .single-image {
+            display: none;
+        }
+
+        #mycanvas {
+            background-color: rgb(217, 213, 213);
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body class="body">
+    <canvas width="700" height="700" id="mycanvas"></canvas>
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            
+            var r=0;
+            var g=0;
+            var b=0;
+            //Estuve batallando como tonto y resulto que el problema era mi monitor que tiene una res diferente a la normal
+            addEventListener("mouseover", (event) => {
+            r = Math.floor(Math.random() * 256); 
+            g = Math.floor(Math.random() * 256); 
+            b = Math.floor(Math.random() * 256);
+            });
+
+            addEventListener("mousedown", (event) => {
+            ctx.beginPath();
+            var x = event.layerX - 610;
+            var y = event.layerY -10;
+            ctx.arc(x,y,30,0,2*Math.PI)
+            ctx.fillStyle = "rgba("+r+","+g+","+b+","+0.5+")";
+            ctx.fill();
+            ctx.stroke();
+               
+            });
+
+           
+            
+        }
+    </script>
+</body>
+</html>
