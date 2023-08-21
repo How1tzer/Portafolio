@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 16</title>
+    <style>
+        .body {
+            background-color: rgb(24, 21, 38);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .single-image {
+            display: none;
+        }
+
+        #mycanvas {
+            background-color: rgb(217, 213, 213);
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body class="body">
+    <canvas width="700" height="700" id="mycanvas"></canvas>
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            
+            var r=0;
+            var g=0;
+            var b=0;
+            var cambio = false;
+            var forma = true;
+            var pintar = false;
+            
+
+            addEventListener("mouseout", (event) => {
+                
+                if(cambio===true){
+                    
+                    
+                    cambio=!cambio;
+                    console.log(forma);
+
+                }
+                else if(cambio===false){
+                    cambio=!cambio;
+                    r = Math.floor(Math.random() * 256); 
+                    g = Math.floor(Math.random() * 256); 
+                    b = Math.floor(Math.random() * 256);
+                    forma=!forma;
+                    console.log(forma);
+
+
+                }
+
+            
+            });
+
+            addEventListener("mousedown", (event) => {
+
+            var x = event.layerX - 610;
+            var y = event.layerY -10;
+
+            if(forma===true){
+            ctx.beginPath();
+            ctx.arc(x,y,30,0,2*Math.PI)
+            ctx.fillStyle = "rgba("+r+","+g+","+b+","+0.5+")";
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+            }
+            else{
+
+                ctx.beginPath();
+                ctx.fillStyle = "rgba(" + r + "," + g + "," + b + "," + 0.5 + ")";
+                ctx.fillRect(x - 35, y - 30, 70, 70);
+                ctx.strokeRect(x - 35, y - 30, 70, 70);
+
+
+            }
+            });
+
+            addEventListener("mousemove", (event) => {
+                if(pintar===true){
+                var x = event.layerX - 610;
+                var y = event.layerY -10;
+                ctx.beginPath();
+                ctx.fillStyle = "black";
+                ctx.fillRect(x , y, 4, 4);
+                }
+                else{}
+            });
+
+
+
+
+            addEventListener("mousedown", (event) => {
+                pintar=true;
+
+            });
+
+            addEventListener("mouseup", (event) => {
+                pintar=false
+
+            });
+
+            
+            
+
+
+
+
+           
+            
+        }
+    </script>
+</body>
+</html>
