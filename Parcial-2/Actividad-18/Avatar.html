@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 17</title>
+    <style>
+        .body {
+            background-color: rgb(24, 21, 38);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .single-image {
+            display: none;
+        }
+
+        #mycanvas {
+            background-color: rgb(217, 213, 213);
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body class="body">
+    <canvas width="800" height="800" id="mycanvas"></canvas>
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            
+            var uno =320;
+            var siete = 230;
+
+            //fondo
+
+            // Radial del fondo
+            const rad = ctx.createRadialGradient(350, 370, 20, 350, 390, 500);
+            rad.addColorStop(0, "#752866");
+            rad.addColorStop(1, "white");
+            
+            ctx.fillStyle = rad;
+            ctx.fillRect(0, 0, 900, 900);
+
+            //Contorno cabeza
+
+            //linea 1
+            
+            for (var i = 0; i < 4; i++) {
+                ctx.fillStyle = "black";
+                ctx.fillRect (uno, 100, 30, 30);
+                uno=uno+30;
+            }
+
+            //linea 2
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (290, 130, 30, 30);
+            
+            ctx.fillStyle = "rgba(120,132,171,1)";
+            ctx.fillRect (320, 130, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (350, 130, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (380, 130, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (410, 130, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (440, 130, 30, 30);
+
+            //Linea 3
+            ctx.fillStyle = "black";
+            ctx.fillRect (260, 160, 30, 30);
+
+            ctx.fillStyle = "rgba(120,132,171,1)";
+            ctx.fillRect (290, 160, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (320, 160, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (350, 160, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (380, 160, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (410, 160, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (440, 160, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (470, 160, 30, 30);
+
+            //linea 4
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (260, 190, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (290, 190, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (320, 190, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (350, 190, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (380, 190, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (410, 190, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (440, 190, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (470, 190, 30, 30);
+
+            //linea 5
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (230, 220, 30, 30);
+
+            ctx.fillStyle = "rgba(120,132,171,1)";
+            ctx.fillRect (260, 220, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (290, 220, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (320, 220, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (350, 220, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (380, 220, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (410, 220, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (440, 220, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (470, 220, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 220, 30, 30);
+
+
+            //linea 6
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (230, 250, 30, 30);
+
+            ctx.fillStyle = "rgba(120,132,171,1)";
+            ctx.fillRect (260, 250, 30, 30);
+
+            ctx.fillStyle = "rgba(120,132,171,1)";
+            ctx.fillRect (290, 250, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (320, 250, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (350, 250, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (380, 250, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (410, 250, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (440, 250, 30, 30);
+
+            ctx.fillStyle = "rgba(178,188,194,1)";
+            ctx.fillRect (470, 250, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 250, 30, 30);
+
+            //linea 7
+
+            for (var i = 0; i < 10; i++) {
+                ctx.fillStyle = "black";
+                ctx.fillRect (siete, 280, 30, 30);
+                siete=siete+30;
+            }
+
+            //linea 8
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (230, 310, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (260, 310, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (290, 310, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (320, 310, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (350, 310, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (380, 310, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (410, 310, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (440, 310, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (470, 310, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 310, 30, 30);
+
+            //linea 9
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (230, 340, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (260, 340, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (290, 340, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (320, 340, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (350, 340, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (380, 340, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (410, 340, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (440, 340, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (470, 340, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 340, 30, 30);
+            
+            //linea 10
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (230, 370, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (260, 370, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (290, 370, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (320, 370, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (350, 370, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (380, 370, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (410, 370, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (440, 370, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (470, 370, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 370, 30, 30);
+
+            //linea 11
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (230, 400, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (260, 400, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (290, 400, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (320, 400, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (350, 400, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (380, 400, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (410, 400, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (440, 400, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (470, 400, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 400, 30, 30);
+
+            //linea 12
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (230, 430, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (260, 430, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (290, 430, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (320, 430, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (350, 430, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (380, 430, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (410, 430, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (440, 430, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (470, 430, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 430, 30, 30);
+
+            //linea 13
+            ctx.fillStyle = "black";
+            ctx.fillRect (230, 460, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (260, 460, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (290, 460, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (320, 460, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (350, 460, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (380, 460, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (410, 460, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (440, 460, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (470, 460, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 460, 30, 30);
+
+            //linea 14
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (230, 490, 30, 30);
+
+            ctx.fillStyle = "yellow";
+            ctx.fillRect (260, 490, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (290, 490, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (320, 490, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (350, 490, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (380, 490, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (410, 490, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (440, 490, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (470, 490, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 490, 30, 30);
+
+            //linea 15
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (230, 520, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (260, 520, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (290, 520, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (320, 520, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (350, 520, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (380, 520, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (410, 520, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (440, 520, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (470, 520, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 520, 30, 30);
+
+            //linea 16
+            ctx.fillStyle = "black";
+            ctx.fillRect (200, 540, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (230, 540, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (260, 540, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (290, 540, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (320, 540, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (350, 540, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (380, 540, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (410, 540, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (440, 540, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (470, 540, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 540, 30, 30);
+
+            //linea 17
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (200, 570, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (230, 570, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (260, 570, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (290, 570, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (320, 570, 30, 30);
+
+            ctx.fillStyle = "white";
+            ctx.fillRect (350, 570, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (380, 570, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (410, 570, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (440, 570, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (470, 570, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 570, 30, 30);
+
+            //linea 18
+            ctx.fillStyle = "black";
+            ctx.fillRect (170, 600, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (200, 600, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (230, 600, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (260, 600, 30, 30);
+
+            ctx.fillStyle = "rgba(255,191,54,1)";
+            ctx.fillRect (290, 600, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (320, 600, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (350, 600, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (380, 600, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (410, 600, 30, 30);
+
+            ctx.fillStyle = "rgba(255,242,117,1)";
+            ctx.fillRect (440, 600, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (470, 600, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 600, 30, 30);
+
+            //linea 19 final :')
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (140, 630, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (170, 630, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (200, 630, 30, 30);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect (230, 630, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (260, 630, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (290, 630, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (320, 630, 30, 30);
+
+            ctx.fillStyle = "rgba(122,33,58,1)";
+            ctx.fillRect (350, 630, 30, 30);
+
+            ctx.fillStyle = "rgba(122,33,58,1)";
+            ctx.fillRect (380, 630, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (410, 630, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (440, 630, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (470, 630, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 630, 30, 30);
+
+            
+
+            
+            
+
+            
+
+            
+            
+            
+            // guardado 
+            ctx.fillStyle = "black";
+            ctx.fillRect (230, 250, 30, 30);
+
+            ctx.fillStyle = "black";
+            ctx.fillRect (500, 250, 30, 30);
+
+            
+           
+
+        
+        }
+
+       
+
+      
+    </script>
+</body>
+</html>
