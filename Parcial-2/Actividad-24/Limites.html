@@ -53,6 +53,7 @@
                 ctx.closePath();
                 currentColor = getRandomColor();
                 direccion();
+                limites();
                 update();
                 requestAnimationFrame(animate);
             }
@@ -106,6 +107,21 @@
                 }
             
             
+            }
+            function limites(){
+                if(y<-100){
+                    y=720;
+                }
+                if(y>720){
+                    y=-100;
+                }
+
+                if(x<-110){
+                    x=720;
+                }
+                if(x>720){
+                    x=-110;
+                }
             }
             
 
