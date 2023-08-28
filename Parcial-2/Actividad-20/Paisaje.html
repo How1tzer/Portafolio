@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 20</title>
+    <style>
+        .body {
+            background-color: rgb(24, 21, 38);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .single-image {
+            display: none;
+        }
+
+        #mycanvas {
+            background-color: rgb(217, 213, 213);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="body">
+    <canvas width="800" height="600" id="mycanvas"></canvas>
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+
+            //linea 1
+            var x =10;
+
+            for (var i = 0; i < 26; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 10, 30, 30);
+                x=x+30;
+            }
+
+            
+
+            //linea 2
+            var x =10;
+            for (var i = 0; i < 10; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 40, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 6; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 40, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 10; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 40, 30, 30);
+                x=x+30;
+            }
+
+            //linea 3
+            var x =10;
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 70, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "white";
+                ctx.fillRect (x, 70, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 3; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 70, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 10; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 70, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 8; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 70, 30, 30);
+                x=x+30;
+            }
+
+            //linea 4
+            var x =10;
+            for (var i = 0; i < 7; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 100, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 3; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 100, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 6; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 100, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 3; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 100, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 7; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 100, 30, 30);
+                x=x+30;
+            }
+
+            //fila 5
+            var x =10;
+            for (var i = 0; i < 6; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 130, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 130, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 10; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 130, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 130, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 130, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "white";
+                ctx.fillRect (x, 130, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 3; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 130, 30, 30);
+                x=x+30;
+            }
+
+            //linea 6
+
+            var x =10;
+            for (var i = 0; i < 5; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 160, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 160, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 12; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 160, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 160, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 5; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 160, 30, 30);
+                x=x+30;
+            }
+
+            //linea 7
+
+            var x =10;
+            for (var i = 0; i < 5; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 190, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 190, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 12; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 190, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 190, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 5; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 190, 30, 30);
+                x=x+30;
+            }
+
+            //linea 8
+            var x =10;
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 220, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 220, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 14; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 220, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 220, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 220, 30, 30);
+                x=x+30;
+            }
+
+            //linea 9
+             var x =10;
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 250, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 250, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 14; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 250, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 250, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 250, 30, 30);
+                x=x+30;
+            }
+
+            //linea 10
+            var x =10;
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 280, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 280, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 14; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 280, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 280, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 280, 30, 30);
+                x=x+30;
+            }
+
+            //linea 11
+            var x =10;
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 310, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 310, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 5; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 310, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 7; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 310, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(12,63,198,1)";
+                ctx.fillRect (x, 310, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 310, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 310, 30, 30);
+                x=x+30;
+            }
+
+             //linea 12
+             var x =10;
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 340, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 340, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 340, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 340, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 8; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 340, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 340, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 3; i++) {
+                
+                ctx.fillStyle = "rgba(12,63,198,1)";
+                ctx.fillRect (x, 340, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 3; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 340, 30, 30);
+                x=x+30;
+            }
+
+            //linea 12
+            var x =10;
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 370, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 370, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 3; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 370, 30, 30);
+                x=x+30;
+            }
+            
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 370, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 12; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 370, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 370, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(12,63,198,1)";
+                ctx.fillRect (x, 370, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 370, 30, 30);
+                x=x+30;
+            }
+
+            //linea 13
+            var x =10;
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 400, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "white";
+                ctx.fillRect (x, 400, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 400, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 400, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 400, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 400, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 400, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 400, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 8; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 400, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 400, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(12,63,198,1)";
+                ctx.fillRect (x, 400, 30, 30);
+                x=x+30;
+            }
+
+            //linea 14
+            var x =10;
+            for (var i = 0; i < 5; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 8; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(12,63,198,1)";
+                ctx.fillRect (x, 430, 30, 30);
+                x=x+30;
+            }
+
+            //linea 15
+            var x =10;
+            for (var i = 0; i < 6; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 460, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 460, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 460, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 460, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 460, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 460, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 460, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 460, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 460, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 460, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 7; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 460, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 460, 30, 30);
+                x=x+30;
+            }
+
+            //linea 16
+            var x =10;
+            for (var i = 0; i < 7; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 490, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 490, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 490, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 490, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 490, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 490, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 490, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 490, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 490, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 8; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 490, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 490, 30, 30);
+                x=x+30;
+            }
+
+            //linea 17
+            var x =10;
+            for (var i = 0; i < 8; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 520, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 520, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 520, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 3; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 520, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 2; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 520, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(255,247,198,1)";
+                ctx.fillRect (x, 520, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 520, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 8; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 520, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 520, 30, 30);
+                x=x+30;
+            }
+
+            
+            //linea 17
+            var x =10;
+            for (var i = 0; i < 10; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 550, 30, 30);
+                x=x+30;
+            }
+
+            
+
+            
+
+            for (var i = 0; i < 4; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 550, 30, 30);
+                x=x+30;
+            }
+
+            
+
+            
+
+            for (var i = 0; i < 3; i++) {
+                
+                ctx.fillStyle = "rgba(255,243,160,1)";
+                ctx.fillRect (x, 550, 30, 30);
+                x=x+30;
+            }
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 550, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 7; i++) {
+                
+                ctx.fillStyle = "black";
+                ctx.fillRect (x, 550, 30, 30);
+                x=x+30;
+            }
+
+            for (var i = 0; i < 1; i++) {
+                
+                ctx.fillStyle = "rgba(8,27,122,1)";
+                ctx.fillRect (x, 550, 30, 30);
+                x=x+30;
+            }
+
+
+            
+            
+            //ctx.fillStyle = "rgba(255,243,160,1)";
+            //ctx.fillRect (310, 40, 30, 30);
+        
+        }
+
+       
+
+      
+    </script>
+</body>
+</html>
