@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 24</title>
+    <style>
+        .body {
+            background-color: rgb(24, 21, 38);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .single-image {
+            display: none;
+        }
+
+        #mycanvas {
+            background-color: rgb(217, 213, 213);
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body class="body">
+    <canvas width="700" height="700" id="mycanvas"></canvas>
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var x = 255, y = 255;
+        var currentColor = "red";
+        var keyState = {};
+        var direct = ""; 
+        var velocidad = 1; 
+        
+        window.requestAnimationFrame = (function () {
+            return window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            function (callback) {
+                window.setTimeout(callback, 17);
+            };
+        }());
+
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.fillStyle = "rgb(217, 213, 213)";
+                ctx.fillRect(x, y, 100, 100);
+                ctx.closePath();
+                currentColor = getRandomColor();
+                direccion();
+                limites();
+                update();
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+
+            function direccion(){
+                document.addEventListener("keydown", (e) => {
+                    keyState[e.keyCode] = true;
+                });
+                document.addEventListener("keyup", (e) => {
+                    keyState[e.keyCode] = false;
+                });
+
+                if (keyState[87]) { // w
+                    direct = "arriba";
+                }
+                if (keyState[83]) { // s
+                    
+                    direct = "abajo";
+                }
+                if (keyState[65]) { // a
+                    
+                    direct = "izquierda";
+                }
+                if (keyState[68]) { // d
+                    
+                    direct = "derecha";
+                }
+
+                if (keyState[32]) { // espacio
+                    velocidad = velocidad+.1; 
+                } 
+
+                //Parte que me costo entender pero logra que se mueva como la vivorita
+                
+                if(direct == "arriba"){
+                    y -= velocidad;
+                }
+
+                if(direct == "abajo"){
+                    y += velocidad;
+                }
+
+                if(direct == "izquierda"){
+                    x -= velocidad;
+                }
+
+                if(direct == "derecha"){
+                    x += velocidad;
+                }
+            
+            
+            }
+            function limites(){
+                if(y<-100){
+                    y=720;
+                }
+                if(y>720){
+                    y=-100;
+                }
+
+                if(x<-110){
+                    x=720;
+                }
+                if(x>720){
+                    x=-110;
+                }
+            }
+            
+
+            function update() {
+                ctx.beginPath();
+                ctx.fillStyle = currentColor;
+                ctx.fillRect(x, y, 100, 100);
+                ctx.closePath();
+            }
+
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        }
+    </script>
+</body>
+</html>
