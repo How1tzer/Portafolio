@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad 29</title>
+    <title>Actividad 28</title>
     <style>
         .body {
             background-color: rgb(24, 21, 38);
@@ -33,6 +33,7 @@
         var direct = ""; 
         var velocidad = 1; 
         var tx = 0, ty = 0;
+        var ox = 200, oy = 200;
 
         window.requestAnimationFrame = (function () {
             return window.requestAnimationFrame ||
@@ -57,6 +58,7 @@
                 limites();
                 update();
                 comida();
+                obstaculo();
                 requestAnimationFrame(animate);
             }
 
@@ -142,6 +144,17 @@
 
                     tx = n1;
                     ty = n2;
+                }
+            }
+
+            function obstaculo() {
+                ctx.beginPath();
+                ctx.fillStyle = "grey";
+                ctx.fillRect(ox, oy, 30, 30);
+                ctx.closePath();
+
+                if (x < ox + 30 && x + 100 > ox && y < oy + 30 && y + 100 > oy) {
+                    direct = ""; // Detener el movimiento del cuadrado
                 }
             }
 
