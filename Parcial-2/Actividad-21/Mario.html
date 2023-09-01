@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 21</title>
+</head>
+<body class="body">
+    <!--De normal estoy acostumbrado a separar por archivos (css,js,html)
+    Pero como es el primer trabajo no me quise emocionar mucho-->
+    
+    <canvas width="700" height="700" id="mycanvas"></canvas>
+    
+    <style>
+        .body{
+            background-color: rgb(24, 21, 38);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #mycanvas{
+            background-color: rgb(217, 213, 213);
+            border-radius: 30px;
+            
+        }
+    </style>
+
+   
+   
+   <script>
+
+        /*Agregando Cosas del curso*/
+
+    var canvas = document.getElementById('mycanvas'); 
+    if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        var x1=-50, y1=630;
+        var x2=40, y2=700;
+
+        //fondo
+        
+        
+        
+        ctx.fillStyle = "rgba(162, 240, 255, 1)";
+        ctx.fillRect (0, 0, 700, 700);
+
+        ctx.arc(50,602,50,3.2,2*Math.PI);
+        ctx.fillStyle = "green";
+        ctx.fill();
+
+        //suelo
+        ctx.fillStyle = "rgba(177, 111, 59, 1)";
+        ctx.fillRect (0, 600, 700, 700);
+
+        ctx.fillStyle = "rgba(251, 196, 194, 1)";
+        ctx.fillRect (0, 600, 700, 30);
+
+        ctx.strokeStyle = "black"; 
+        ctx.lineWidth = 2; 
+        ctx.strokeRect(0, 600, 700, 30);    
+
+        for (let i = 0; i < 20; i++) {
+            
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+
+            x1+=50;
+            x2+=50;
+        }
+
+        //Cajas grandres
+        
+        ctx.strokeStyle = "black"; 
+        ctx.lineWidth = 6; 
+        ctx.strokeRect(240, 360, 150, 238);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (280, 410, 150, 190);
+
+        ctx.fillStyle = "rgba(113,194,255,1)";
+        ctx.fillRect (240, 360, 150, 238);
+
+        ctx.strokeStyle = "black"; 
+        ctx.lineWidth = 6; 
+        ctx.strokeRect(140, 448, 150, 150);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (160, 480, 150, 120);
+        
+        ctx.fillStyle = "rgba(251, 196, 194, 1)";
+        ctx.fillRect (140, 448, 150, 150);
+
+        ctx.strokeStyle = "black"; 
+        ctx.lineWidth = 6; 
+        ctx.strokeRect(630, 448, 150, 150);
+        
+        ctx.fillStyle = "rgba(0, 221, 91, 1)";
+        ctx.fillRect (630, 448, 150, 150);
+
+
+        //Cajas chicas
+        ctx.strokeStyle = "black"; 
+        ctx.lineWidth = 6; 
+        ctx.strokeRect(30,370, 40, 40);
+        
+        ctx.fillStyle = "rgba(255, 143, 89, 1)";
+        ctx.fillRect (30,370, 40, 40);
+
+        ctx.strokeStyle = "black"; 
+        ctx.lineWidth = 6; 
+        ctx.strokeRect(630,370, 40, 40);
+
+        ctx.fillStyle = "rgba(255, 143, 89, 1)";
+        ctx.fillRect (630,370, 40, 40);
+
+        ctx.strokeStyle = "black"; 
+        ctx.lineWidth = 6; 
+        ctx.strokeRect(120,240, 40, 40);
+
+        ctx.fillStyle = "rgba(255, 143, 89, 1)";
+        ctx.fillRect (120,240, 40, 40);
+
+        ctx.strokeStyle = "black"; 
+        ctx.lineWidth = 6; 
+        ctx.strokeRect(163,240, 40, 40);
+
+        ctx.fillStyle = "rgba(255, 143, 89, 1)";
+        ctx.fillRect (163,240, 40, 40);
+
+        //Tuberia
+
+        ctx.strokeStyle = "black"; 
+        ctx.lineWidth = 6; 
+        ctx.strokeRect(450, 460, 100, 30);
+        
+        ctx.fillStyle = "rgba(0, 77, 0, 1)";
+        ctx.fillRect (450, 460, 100, 30);
+
+        ctx.fillStyle = "rgba(0, 97, 0, 1)";
+        ctx.fillRect (460, 460, 80, 140);
+    
+        ctx.strokeStyle = "black"; 
+        ctx.lineWidth = 6; 
+
+        ctx.strokeRect(460, 493, 80, 106);
+        ctx.fillStyle = "rgba(0, 97, 0, 1)";
+        ctx.fillRect (460, 493, 80, 106);
+
+        //Puntos negros
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (194, 245, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (194, 270, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (168, 245, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (168, 270, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (150, 245, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (150, 270, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (125, 245, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (125, 270, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (35, 400, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (60, 400, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (35, 375, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (60, 375, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (635, 400, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (635, 375, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (660, 400, 5, 5);
+
+        ctx.fillStyle = "black";
+        ctx.fillRect (660, 375, 5, 5);
+        
+        //circulos
+
+        ctx.strokeStyle = "black"; 
+        ctx.lineWidth = 3;
+
+        ctx.beginPath();
+        ctx.arc(160,470,8,0,2*Math.PI)
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(160,470,8,0,2*Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(270,470,8,0,2*Math.PI)
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(270,470,8,0,2*Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(160,580,8,0,2*Math.PI)
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(160,580,8,0,2*Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(270,580,8,0,2*Math.PI)
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(270,580,8,0,2*Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(370,580,8,0,2*Math.PI)
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(370,580,8,0,2*Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(370,380,8,0,2*Math.PI)
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(370,380,8,0,2*Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(260,380,8,0,2*Math.PI)
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(260,380,8,0,2*Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(650,470,8,0,2*Math.PI)
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(650,470,8,0,2*Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(650,580,8,0,2*Math.PI)
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(650,580,8,0,2*Math.PI);
+        ctx.fillStyle = "white";
+        ctx.fill();
+
+
+
+        
+
+        
+        
+
+        
+
+        
+
+        
+    
+    }
+    else {   }
+
+    
+        
+    </script>
+    
+</body>
+</html>
