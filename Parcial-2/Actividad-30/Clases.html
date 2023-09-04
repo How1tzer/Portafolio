@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 30</title>
+    <style>
+        .body {
+            background-color: rgb(24, 21, 38);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .single-image {
+            display: none;
+        }
+
+        #mycanvas {
+            background-color: rgb(217, 213, 213);
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body class="body">
+    <canvas width="700" height="700" id="mycanvas"></canvas>
+
+    <script>
+        var canvas = document.getElementById('mycanvas');
+        var currentColor = "red";
+        var keyState = {};
+        var velocidad = 1;
+
+        // Canvas
+        window.requestAnimationFrame = (function () {
+            return window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            function (callback) {
+                window.setTimeout(callback, 17);
+            };
+        }());
+
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+
+            // Clases
+            class Jugador {
+                constructor(color, jx, jy, height, width,direct) {
+                    this.color = color;
+                    this.jx = jx;
+                    this.jy = jy;
+                    this.height = height;
+                    this.width = width;
+                    this.direct = direct;
+                }
+            }
+
+            class Obstaculo {
+                constructor(color, ox, oy, width, height) {
+                    this.color = color;
+                    this.ox = ox;
+                    this.oy = oy;
+                    this.width = width;
+                    this.height = height;
+                }
+            }
+
+            class Comida {
+                constructor(color, cx, cy, width, height) {
+                    this.color = color;
+                    this.cx = cx;
+                    this.cy = cy;
+                    this.width = width;
+                    this.height = height;
+                }
+            }
+
+            // Objetos
+            const jugador1 = new Jugador("red", 255, 255, 100, 100,"");
+
+            const obstaculo1 = new Obstaculo("grey", 200, 200, 250, 30);
+            const obstaculo2 = new Obstaculo("grey", 200, 400, 250, 30);
+            const obstaculo3 = new Obstaculo("grey", 200, 600, 250, 30);
+
+            const comida1 = new Comida("black", 20, 20, 30, 30);
+
+            // Funciones
+
+            function direccion(jugador) {
+                document.addEventListener("keydown", (e) => {
+                    keyState[e.keyCode] = true;
+                });
+                document.addEventListener("keyup", (e) => {
+                    keyState[e.keyCode] = false;
+                });
+                if (keyState[87]) { // w
+                    jugador.direct = "arriba";
+                }
+                if (keyState[83]) { // s
+                    jugador.direct = "abajo";
+                }
+                if (keyState[65]) { // a
+                    jugador.direct = "izquierda";
+                }
+                if (keyState[68]) { // d
+                    jugador.direct = "derecha";
+                }
+                if (keyState[32]) { // espacio
+                    velocidad = velocidad + 0.1;
+                }
+
+                if (jugador.direct== "arriba") { 
+                    jugador.jy -= velocidad;
+                }
+                if (jugador.direct == "abajo") { 
+                    jugador.jy += velocidad;
+                }
+                if (jugador.direct == "izquierda") { 
+                    jugador.jx -= velocidad;
+                }
+                if (jugador.direct == "derecha") { 
+                    jugador.jx += velocidad;
+                }
+
+                
+            }
+
+            function limites(jugador) {
+                if (jugador.jy < -100) {
+                    jugador.jy = 720;
+                }
+                if (jugador.jy > 720) {
+                    jugador.jy = -100;
+                }
+
+                if (jugador.jx < -110) {
+                    jugador.jx = 720;
+                }
+                if (jugador.jx > 720) {
+                    jugador.jx = -110;
+                }
+            }
+
+            function update(jugador) {
+                ctx.beginPath();
+                ctx.fillStyle = jugador.color;
+                ctx.fillRect(jugador.jx, jugador.jy, jugador.height, jugador.width);
+                ctx.closePath();
+            }
+
+            function comida(comida) {
+                ctx.beginPath();
+                ctx.fillStyle = comida.color;
+                ctx.fillRect(comida.cx, comida.cy, comida.width, comida.height);
+                ctx.closePath();
+                if (jugador1.jx < comida.cx + comida.width && jugador1.jx + jugador1.width > comida.cx &&
+                    jugador1.jy < comida.cy + comida.height && jugador1.jy + jugador1.height > comida.cy) {
+                    comida.cx = Math.floor(Math.random() * (canvas.width - comida.width));
+                    comida.cy = Math.floor(Math.random() * (canvas.height - comida.height));
+                }
+            }
+
+            function colision(obstaculo) {
+                ctx.beginPath();
+                ctx.fillStyle = obstaculo.color;
+                ctx.fillRect(obstaculo.ox, obstaculo.oy, obstaculo.width, obstaculo.height);
+                ctx.closePath();
+
+                if (jugador1.jx < obstaculo.ox + obstaculo.width && jugador1.jx + jugador1.width > obstaculo.ox &&
+                    jugador1.jy < obstaculo.oy + obstaculo.height && jugador1.jy + jugador1.height > obstaculo.oy) {
+                    jugador1.direct = "";
+                }
+            }
+
+            function getRandomColor(jugador) {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                jugador.color = color; 
+                return jugador.color;
+            }           
+
+            // En pantalla
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.fillStyle = "rgb(217, 213, 213)";
+                ctx.fillRect(jugador1.jx, jugador1.jy, jugador1.height, jugador1.width);
+                ctx.closePath();
+                getRandomColor(jugador1);
+                direccion(jugador1);
+                limites(jugador1);
+                update(jugador1);
+                colision(obstaculo1);
+                colision(obstaculo2);
+                colision(obstaculo3);
+
+                comida(comida1);
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+    </script>
+</body>
+</html>
