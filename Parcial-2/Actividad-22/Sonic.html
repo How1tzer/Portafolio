@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 22</title>
+</head>
+<body class="body">
+
+    <canvas width="700" height="700" id="mycanvas"></canvas>
+    
+    <style>
+        .body{
+            background-color: rgb(24, 21, 38);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #mycanvas{
+            background-color: rgb(217, 213, 213);
+            border-radius: 30px;
+            
+        }
+    </style>
+
+   
+   
+   <script>
+
+
+
+    var canvas = document.getElementById('mycanvas'); 
+    if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        var x = 0;
+
+        //fondo
+        
+        ctx.fillStyle = "blue";
+        ctx.fillRect (0, 0, 700, 700);
+
+        //suelo
+        ctx.fillStyle = "rgba(177, 111, 59, 1)";
+        ctx.fillRect (0, 560, 700, 700);
+        
+        //Lineas verdes
+        ctx.fillStyle = "rgba(128, 224, 0, 1)";
+        ctx.fillRect (0, 515, 700, 15);
+
+        ctx.fillStyle = "rgba(64, 160, 0, 1)";
+        ctx.fillRect (0, 530, 700, 15);
+
+        ctx.fillStyle = "rgba(0, 96, 0, 1)";
+        ctx.fillRect (0, 545, 700, 15);
+
+        
+
+           
+
+        for (let i = 0; i < 10; i++) {
+            
+            ctx.fillStyle = "rgba(96, 32, 0, 1)";
+            ctx.fillRect (x,680, 40, 40);
+
+            ctx.fillStyle = "rgba(96, 32, 0, 1)";
+            ctx.fillRect (x+40,640, 40, 40);
+
+            ctx.fillStyle = "rgba(96, 32, 0, 1)";
+            ctx.fillRect (x,600, 40, 40);
+
+            ctx.fillStyle = "rgba(96, 32, 0, 1)";
+            ctx.fillRect (x+40,560, 40, 40);
+            x+=80
+            
+        }
+
+        ctx.fillStyle = "rgba(0, 0, 0, .4)";
+        ctx.fillRect (0, 560, 700, 15);
+
+        //Palmera
+            //tronco
+            
+        ctx.fillStyle = "rgba(100, 50, 0, 1)";
+        ctx.fillRect (360,215, 15, 300);
+            
+        ctx.beginPath();
+        ctx.arc(310,320, 130, 5, 2 * Math.PI);
+        ctx.fillStyle = "rgba(128,224,0)";
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.arc(290,180, 80, 0, .5 * Math.PI);
+        ctx.fillStyle = "rgba(28,224,0)";
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.arc(270,230, 100, 4, 2 * Math.PI);
+        ctx.fillStyle = "rgba(128,224,0)";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(250,220, 130, 5, 2 * Math.PI);
+        ctx.fillStyle = "rgba(128,224,0)";
+        ctx.fill(); 
+
+        ctx.beginPath();
+        ctx.arc(280, 200, 100, Math.PI * 2, 1); 
+        ctx.fillStyle = "rgba(128, 224, 0)";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(280, 140, 100, Math.PI * 2, 1); 
+        ctx.fillStyle = "rgba(128, 224, 0)";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(402, 270, 100, 4,0 * Math.PI);
+        ctx.fillStyle = "rgba(128,224,0)";
+        ctx.fill();
+
+
+        ctx.beginPath();
+        ctx.arc(-100,330, 130, 5, 2 * Math.PI);
+        ctx.fillStyle = "rgba(128,224,0)";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(0, 270, 100, 4,0 * Math.PI);
+        ctx.fillStyle = "rgba(128,224,0)";
+        ctx.fill();
+
+
+        //flor
+
+        ctx.fillStyle = "rgba(64,160,0,1)";
+        ctx.fillRect (600,415, 10, 100);
+
+        ctx.beginPath();
+        ctx.arc(606, 425, 30, 0,2 * Math.PI);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(606, 425, 20, 0,2 * Math.PI);
+        ctx.fillStyle = "rgba(96, 32, 0, 1)";
+        ctx.fill();
+
+
+        //anillos
+
+        ctx.beginPath();
+        ctx.lineWidth = 5; 
+        ctx.strokeStyle = "yellow";
+        ctx.arc(200, 480,20,0,2*Math.PI)
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.lineWidth = 5; 
+        ctx.strokeStyle = "yellow";
+        ctx.arc(120, 480,20,0,2*Math.PI)
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.lineWidth = 5; 
+        ctx.strokeStyle = "yellow";
+        ctx.arc(40, 480,20,0,2*Math.PI)
+        ctx.stroke();
+
+        
+        
+        
+        
+
+
+
+    
+    }
+    else {   
+
+    }
+
+    
+        
+    </script>
+    
+</body>
+</html>
