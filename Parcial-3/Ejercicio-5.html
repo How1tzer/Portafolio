@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <!--Alfin libre de canvas-->
+</head>
+<body style="background-color: gray;">
+    <div class="container" id="container_app">
+        <button @click="count++">
+            Click me {{ count }}
+        </button>
+        
+        <h2>
+            Hola {{ username }}
+        </h2>
+        <input type="text" v-model="username" name="">
+        <input type="text" v-model="num1" name="">
+        <input type="text" v-model="num2" name="">
+        <button @click="hi()">
+            Sumar
+        </button>
+        <h2>
+            Resultado: {{ result }}
+        </h2>
+    </div>
+    <!--Yo normalmente pongo los scripts extra hasta abajo pero no me funciono tuve que pedir ayuda
+    en el salon para entender que onda por que anduve enfermo :P-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script type="text/javascript">
+        const { createApp, ref } = Vue;
+        createApp({
+            setup() {
+                const username = ref('');
+                const num1 = ref(0);
+                const num2 = ref(0);
+                const result = ref(0);
+                return {
+                    count: ref(0),
+                    username,
+                    num1,
+                    num2,
+                    result
+                };
+            },
+            methods: {
+                hi() {
+                    this.result = (+this.num1) + (+this.num2);
+                }
+            }
+        }).mount("#container_app");
+    </script>
+    
+</body>
+</html>
