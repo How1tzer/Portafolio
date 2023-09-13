@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body style="background-color: gray;">
+    <div class="container" id="container_app">
+        <button @click="count++">
+            Click me {{ count }}
+        </button>
+        
+        <h2>
+            Hola {{ username }}
+        </h2>
+        <input type="text" v-model="username" name="">
+        <input type="text" v-model="num1" name="">
+        <input type="text" v-model="num2" name="">
+        <button @click="hi()">
+            Sumar
+        </button>
+        <h2>
+            Resultado: {{ result }}
+        </h2>
+
+        <form>
+
+            <fieldset>
+                <legend>
+                    Name(s);
+                </legend>
+                <input type="text" v-model="name" placeholder="Write here" name="">
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    Lastname(s);
+                </legend>
+                <input type="text" v-model="lastname" placeholder="Write here" name="">
+            </fieldset>
+            <br>
+            <button type="button" v-on:click="saveData">
+                save data
+            </button>
+
+        </form>
+
+        <ol>
+            <li v-for="k in person">
+                {{k.name}} {{k.lastname}}
+            </li>
+        </ol>
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script type="text/javascript">
+        const { createApp, ref } = Vue;
+        createApp({
+            setup() {
+                const username = ref('');
+                const num1 = ref(0);
+                const num2 = ref(0);
+                const result = ref(0);
+                return {
+                    count: ref(0),
+                    username,
+                    num1,
+                    num2,
+                    result,
+                    name: ref(''),
+                    lastname: ref(''),
+                    person: ref([])
+                };
+            },
+            methods: {
+                hi() {
+                    this.result = (+this.num1) + (+this.num2);
+                },
+                saveData(){
+                    console.log("hola crack")
+
+                    let p = {
+                        name: this.name,
+                        lastname: this.lastname
+                    }
+
+                    this.person.push(p);
+                }
+            }
+        }).mount("#container_app");
+    </script>
+    
+</body>
+</html>
