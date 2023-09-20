@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body style="background-color: gray;">
+    <div class="container" id="container_app">
+        <form>
+            <fieldset>
+                <legend>Email</legend>
+                <input type="text" v-model="email" placeholder="Write here" name="">
+            </fieldset>
+
+            <fieldset>
+                <legend>Password</legend>
+                <input type="password" v-model="password" placeholder="Write here" name="">
+            </fieldset>
+            <br>
+            <button type="button" @click="login">Access</button>
+        </form>
+    </div>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script type="text/javascript">
+        const { createApp, ref } = Vue;
+        createApp({
+            data() {
+                return {
+                    email: '',
+                    password: '',
+                    users: [] // Array para almacenar los usuarios del JSON
+                };
+            },
+            methods: {
+                async login() {
+                    // Realizar una solicitud fetch para cargar el JSON de usuarios
+                    try {
+                        const response = await fetch('users.json');
+                        this.users = await response.json();
+                    } catch (error) {
+                        console.error('Error al cargar el archivo JSON:', error);
+                        return;
+                    }
+                    
+                    // Validar las credenciales ingresadas por el usuario
+                    const user = this.users.find(user => user.email === this.email && user.password === this.password);
+
+                    if (user) {
+                        alert('Inicio de sesión exitoso');
+                    } else {
+                        alert('Credenciales incorrectas');
+                    }
+                }
+            }
+        }).mount("#container_app");
+    </script>
+</body>
+</html>
