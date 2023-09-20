@@ -24,6 +24,10 @@
 
         </form>
 
+        <div v-if="isLoggedIn">
+            <h2>Bienvenido, has iniciado sesión.</h2>
+        </div>
+
     </div>
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -36,7 +40,7 @@
                 return {
                     email: '',
                     password: '',
-                    loginError: false, 
+                    isLoggedIn: false, 
                 };
             },
             methods: {
@@ -46,10 +50,18 @@
                     const user = users.find(user => user.email === this.email && user.password === this.password);
 
                     if (user) {
-                        alert('Exito el iniciar sesion');
+                        localStorage.setItem('isLoggedIn', 'true');
+                        alert('Inicio de sesión exitoso');
+                        this.isLoggedIn = true;
                     } else {
-                        alert('Tu email o password es incorrecta intentalo de nuevo');
+                        alert('Tu email o contraseña es incorrecta. Inténtalo de nuevo');
                     }
+                }
+            },
+            mounted() {
+                const storedIsLoggedIn = localStorage.getItem('isLoggedIn');
+                if (storedIsLoggedIn === 'true') {
+                    this.isLoggedIn = true;
                 }
             }
         }).mount("#container_app");
@@ -57,7 +69,6 @@
     </script>
 
 </body>
-
 </html>
 
 
