@@ -50,8 +50,8 @@
                     const user = users.find(user => user.email === this.email && user.password === this.password);
 
                     if (user) {
-                        localStorage.setItem('isLoggedIn', 'true');
                         alert('Inicio de sesión exitoso');
+                        localStorage.setItem('isLoggedIn', 'true');
                         this.isLoggedIn = true;
                     } else {
                         alert('Tu email o contraseña es incorrecta. Inténtalo de nuevo');
