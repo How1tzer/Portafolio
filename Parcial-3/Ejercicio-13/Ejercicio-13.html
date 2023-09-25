@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    
+        th {
+            background-color: #f2f2f2;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body style="background-color: gray;">
+
+<div class="container" id="container_app">
+
+    <form v-if="!isLoggedIn">
+
+        <fieldset>
+            <legend>Email</legend>
+            <input type="text" v-model="email" placeholder="Write here" name="">
+        </fieldset>
+
+        <fieldset>
+            <legend>Password</legend>
+            <input type="password" v-model="password" placeholder="Write here" name="">
+        </fieldset>
+        <br>
+        <button type="button" @click="login">Access</button>
+
+    </form>
+
+    <div v-if="isLoggedIn">
+        <h2>Bienvenido, has iniciado sesión.</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
+                    <th>Compañía</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="user in users" :key="user.email">
+                    <td>{{ user.nombre }}</td>
+                    <td>{{ user.telefono }}</td>
+                    <td>{{ user.direccion }}</td>
+                    <td>{{ user.compania }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+
+    const { createApp, ref } = Vue;
+    createApp({
+        data() {
+            return {
+                email: '',
+                password: '',
+                isLoggedIn: false,
+                users: [], // Inicialmente, la lista de usuarios estará vacía
+            };
+        },
+        methods: {
+            async login() {
+                const response = await fetch('usuarios.json');
+                const users = await response.json();
+                const user = users.find(user => user.email === this.email && user.password === this.password);
+
+                if (user) {
+                    alert('Inicio de sesión exitoso');
+                    localStorage.setItem('isLoggedIn', 'true');
+                    this.isLoggedIn = true;
+                } else {
+                    alert('Tu email o contraseña es incorrecta. Inténtalo de nuevo');
+                }
+            },
+            async loadUsers() {
+                try {
+                    const response = await fetch('usuarios.json');
+                    if (response.ok) {
+                        this.users = await response.json();
+                    } else {
+                        console.error('Error al cargar usuarios:', response.statusText);
+                    }
+                } catch (error) {
+                    console.error('Error al cargar usuarios:', error);
+                }
+            },
+        },
+        mounted() {
+            const storedIsLoggedIn = localStorage.getItem('isLoggedIn');
+            if (storedIsLoggedIn === 'true') {
+                this.isLoggedIn = true;
+            }
+            
+            // Cargar usuarios cuando se monte la aplicación
+            this.loadUsers();
+        }
+    }).mount("#container_app");
+
+</script>
+
+</body>
+</html>
+
+
+
+
