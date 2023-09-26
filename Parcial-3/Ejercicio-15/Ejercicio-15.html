@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    
+        th {
+            background-color: #f2f2f2;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(138, 165, 208);">
+
+<div class="container" id="container_app">
+
+
+    <!--Formulario de Registro-->
+    <form v-if="!isLoggedIn">
+
+        <fieldset>
+            <legend>Email</legend>
+            <input type="text" v-model="email" placeholder="Write here" name="">
+        </fieldset>
+
+        <fieldset>
+            <legend>Password</legend>
+            <input type="password" v-model="password" placeholder="Write here" name="">
+        </fieldset>
+        <br>
+        <button type="button" @click="login">Access</button>
+
+    </form>
+
+    <!--Tabla de registros-->
+    <div v-if="isLoggedIn">
+        <h2>Bienvenido, has iniciado sesión.</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
+                    <th>Compañía</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(user, index) in users" :key="user.email">
+                    <td>{{ user.nombre }}</td>
+                    <td>{{ user.telefono }}</td>
+                    <td>{{ user.direccion }}</td>
+                    <td>{{ user.compania }}</td>
+                    <td>
+                        <button type="button" @click="edit_user(index)">Editar</button>
+                        <button type="button" @click="delete_user(index)">Borrar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <!--Tabla de agregar usuarios-->
+        <button type="button" @click="add_user">Agregar usuario</button>
+        <br>
+        <br>
+        <div v-if="add || edit">
+            <fieldset>
+                <legend v-if="add">Registro de usuarios</legend>
+                <legend v-if="edit">Editar usuario</legend>
+    
+                <legend>Nombre</legend>
+                <input type="text" v-model="name" placeholder="Write here" name="">
+    
+                <legend>Teléfono</legend>
+                <input type="text" v-model="phone" placeholder="Write here" name="">
+    
+                <legend>Dirección</legend>
+                <input type="text" v-model="direction" placeholder="Write here" name="">
+    
+                <legend>Compañía</legend>
+                <input type="text" v-model="company" placeholder="Write here" name="">
+                <br>
+                <br>
+                <button type="button" @click="save_user" v-if="add">Guardar</button>
+                <button type="button" @click="update_user" v-if="edit">Guardar Edición</button>
+                <button type="button" @click="cancel" v-if="add || edit">Cancelar</button>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+
+    const { createApp, ref } = Vue;
+    createApp({
+        data() {
+            return {
+                email: '',
+                password: '',
+                isLoggedIn: false,
+                users: [],
+                add: false,
+                name:'',
+                phone:'',
+                direction:'',
+                company:''
+            };
+        },
+        methods: {
+            async login() {
+                const response = await fetch('usuarios.json');
+                const users = await response.json();
+                const user = users.find(user => user.email === this.email && user.password === this.password);
+
+                if (user) {
+                    alert('Inicio de sesión exitoso');
+                    localStorage.setItem('isLoggedIn', 'true');
+                    this.isLoggedIn = true;
+                } else {
+                    alert('Tu email o contraseña es incorrecta. Inténtalo de nuevo');
+                }
+            },
+            async loadUsers() {
+                try {
+                    const response = await fetch('usuarios.json');
+                    if (response.ok) {
+                        this.users = await response.json();
+                    } else {
+                        console.error('Error al cargar usuarios:', response.statusText);
+                    }
+                } catch (error) {
+                    console.error('Error al cargar usuarios:', error);
+                }
+            },
+            add_user(){
+                this.add = true;
+            },
+            save_user(){
+                if (this.name && this.phone && this.direction && this.company) {
+            
+            const newUser = {
+                nombre: this.name,
+                telefono: this.phone,
+                direccion: this.direction,
+                compania: this.company
+            };
+
+            this.users.push(newUser);
+
+            this.name = '';
+            this.phone = '';
+            this.direction = '';
+            this.company = '';
+            this.add = false;
+            } else {
+            alert('Faltan campos por llenar');
+                }
+            },
+            edit_user(index) {
+        
+            this.edit = true;
+            this.editIndex = index;
+            this.name = this.users[index].nombre;
+            this.phone = this.users[index].telefono;
+            this.direction = this.users[index].direccion;
+            this.company = this.users[index].compania;
+        },
+        update_user() {
+        if (this.name && this.phone && this.direction && this.company) {
+            this.users[this.editIndex].nombre = this.name;
+            this.users[this.editIndex].telefono = this.phone;
+            this.users[this.editIndex].direccion = this.direction;
+            this.users[this.editIndex].compania = this.company;
+            this.name = '';
+            this.phone = '';
+            this.direction = '';
+            this.company = '';
+            this.edit = false;
+        } else {
+            alert('Faltan campos por llenar');
+        }
+    },
+
+    delete_user(index) {
+        this.users.splice(index, 1);
+    },
+
+        },
+        mounted() {
+            const storedIsLoggedIn = localStorage.getItem('isLoggedIn');
+            if (storedIsLoggedIn === 'true') {
+                this.isLoggedIn = true;
+            }
+            
+            this.loadUsers();
+        }
+    }).mount("#container_app");
+
+</script>
+
+</body>
+</html>
+
+
+
+
