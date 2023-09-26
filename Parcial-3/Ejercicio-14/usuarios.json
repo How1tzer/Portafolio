@@ -1,0 +1,34 @@
+[
+  {
+      "nombre": "Eduardo Marges Gonzalez",
+      "email": "eduardodll349@gmail.com",
+      "password": "1234",
+      "direccion": "123 Calle Principal",
+      "compania": "Coca-Cola",
+      "telefono": "555-123-4567"
+  },
+  {
+      "nombre": "Juan Perez",
+      "email": "juanperez@gmail.com",
+      "password": "nuevapassword1",
+      "direccion": "456 Calle Secundaria",
+      "compania": "Pepsi",
+      "telefono": "555-987-6543"
+  },
+  {
+      "nombre": "Maria Gomez",
+      "email": "mariagomez@gmail.com",
+      "password": "nuevapassword2",
+      "direccion": "789 Calle Terciaria",
+      "compania": "Sprite",
+      "telefono": "555-555-5555"
+  },
+  {
+      "nombre": "Laura Gonzalez",
+      "email": "lauragonzalez@gmail.com",
+      "password": "nuevapassword4",
+      "direccion": "202 Calle Cinquena",
+      "compania": "Mountain Dew",
+      "telefono": "555-333-4444"
+  }
+]
