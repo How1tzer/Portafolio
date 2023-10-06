@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h1 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Iniciar Sesión</h1>
+        <form @submit.prevent="login">
+            <div class="form-group">
+                <label for="username">Nombre de Usuario:</label>
+                <input type="text" class="form-control" id="username" v-model="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" class="form-control" id="password" v-model="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script>
+        function validarCredenciales(requestToken, apiKey, username, password) {
+            const url = 'https://api.themoviedb.org/3/authentication/token/validate_with_login';
+
+            const headers = {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`,
+            };
+
+            const body = JSON.stringify({
+                username: username,
+                password: password,
+                request_token: requestToken,
+            });
+
+            return fetch(url, {
+                method: 'POST',
+                headers: headers,
+                body: body,
+            })
+            .then(response => response.json())
+            .catch(error => {
+                console.error('Error en la solicitud a TMDb:', error);
+                throw error;
+            });
+        }
+
+        new Vue({
+            el: '.login-container',
+            data: {
+                username: '',
+                password: '',
+                requestToken: 'c30c5033f6f0c37e5d338d41398736622545acb2', 
+                apiKey: 'fcee60ab977b95184902878571d03a39', 
+            },
+            methods: {
+                login() {
+                    validarCredenciales(this.requestToken, this.apiKey, this.username, this.password)
+                        .then(data => {
+                            if (data.success) {
+                                
+                                window.location.href = 'movies.html';
+                            } else {
+                                
+                                alert('Credenciales incorrectas');
+                            }
+                        })
+                        .catch(error => {
+                           
+                        });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
