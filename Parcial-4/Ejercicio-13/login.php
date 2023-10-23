@@ -14,8 +14,7 @@ if (isset($_POST['action'])) {
 
 class AuthController
 {
-    public function login($email, $password)
-    {
+    public function login($email, $password){
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
